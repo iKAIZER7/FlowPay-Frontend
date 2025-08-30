@@ -1,0 +1,140 @@
+ /* Flexbox container for the app */
+ .app {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+ }
+
+ /* Header styles */
+ .app-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: #282c34;
+   padding: 20px;
+   color: white;
+ }
+
+
+ .app-logo {
+   height: 75px;
+ }
+
+ .app-header h1 {
+   flex-grow: 1;
+   text-align: center;
+   margin: 0;
+   /* font-size: 2rem; */
+   font-size: 36px;
+   font-weight: bold;
+   font-family: Montserrat, sans-serif;
+   color: white;
+   text-shadow: 0 2px 4px goldenrod;
+   margin-bottom: 20px;
+ }
+
+ Section styles
+section {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Section background responsive and auto height */
+section div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: auto;
+  width: 100%;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  font-weight: bolder;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+/*
+.user-style{
+  font-weight: bold;
+  color: brown;
+  background-color: peachpuff;
+  position: absolute;
+  right: 30px;
+  width: 300px;
+  border: 3px solid whitesmoke;
+  padding: 10px;
+  
+}*/
+.user-style {
+  font-weight: bold;
+  color: brown;
+  background-color: peachpuff;
+  position: absolute;
+  right: 30px;  /* Position the element 30px from the right */
+  top: 50%;     /* Align vertically */
+  transform: translateY(-50%);  /* Center vertically */
+  width: 300px;
+  border: 3px solid whitesmoke;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners for a cleaner look */
+  text-align: center; /* Center the text inside */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visual */
+}
+
+
+.avatar {
+  width: 30px; /* Adjust the size of the avatar image as needed */
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 260px;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  section div {
+    min-height: auto;
+  }
+
+  .user-style{
+    flex-direction: column;
+    position: relative;
+  }
+}

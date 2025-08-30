@@ -1,0 +1,38 @@
+<div class="transaction-container">
+  <h2>Make a Transaction</h2>
+
+  <!-- Step 1: Ask Payment Type -->
+  <div *ngIf="!paymentType" style="text-align:center;">
+    <p>Select Payment Type:</p>
+    <button (click)="selectPaymentType('NEFT')" class="btn">NEFT</button>
+    <button (click)="selectPaymentType('UPI')" class="btn">UPI</button>
+  </div>
+
+  <!-- NEFT Form -->
+  <form *ngIf="paymentType === 'NEFT'" [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <label>From Account:</label>
+    <input type="text" formControlName="fromAccount" placeholder="Enter From Account">
+
+    <label>To Account:</label>
+    <input type="text" formControlName="toAccount" placeholder="Enter To Account">
+
+    <label>Amount:</label>
+    <input type="number" formControlName="amount" placeholder="Enter Amount">
+
+    <button type="submit" [disabled]="transactionForm.invalid" class="btn">Submit NEFT</button>
+  </form>
+
+  <!-- UPI Form -->
+  <form *ngIf="paymentType === 'UPI'" [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <label>From UPI ID:</label>
+    <input type="text" formControlName="fromUPI" placeholder="Enter From UPI ID">
+
+    <label>To UPI ID:</label>
+    <input type="text" formControlName="toUPI" placeholder="Enter To UPI ID">
+
+    <label>Amount:</label>
+    <input type="number" formControlName="amount" placeholder="Enter Amount">
+
+    <button type="submit" [disabled]="transactionForm.invalid" class="btn">Submit UPI</button>
+  </form>
+</div>

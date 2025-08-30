@@ -1,0 +1,53 @@
+<nav class="navbar">
+    <ul class="nav-list">
+      <ng-container>
+        <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/home">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/products">Products</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/search">Search Product</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/dealers">Dealers Info</a>
+        </li> -->
+        <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/logout">Log Out</a>
+        </li>
+        <span class="user-style" *ngIf="isUserLoggedIn">
+          Welcome : {{username}}
+          <img
+            class="avatar"
+            src="\images\avatar.png" 
+            alt="Avatar"
+          />
+        </span>
+       
+        <li class="nav-item">
+          <a *ngIf="!isUserLoggedIn" routerLink="/register">Register</a>
+        </li>
+         <li class="nav-item">
+          <a *ngIf="!isUserLoggedIn" routerLink="/login">Login</a>
+        </li>
+         <li class="nav-item">
+          <a *ngIf="!isUserLoggedIn" routerLink="/aboutus">About Us</a>
+        </li>
+
+         <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/accounts">Account</a>
+        </li>
+<!-- Yaha se maine transaction wala part daalna start kar diya hai -->
+  <!-- <ul>
+    <li><a routerLink="/transactions" routerLinkActive="active">Transactions</a></li>
+    <li><a routerLink="/upi" routerLinkActive="active">UPI</a></li>
+    <li><a routerLink="/neft" routerLinkActive="active">NEFT</a></li>
+  </ul> -->
+  <li class="nav-item">
+          <a *ngIf="isUserLoggedIn" routerLink="/transactions">Transactions</a>
+        </li>
+
+      </ng-container>
+    </ul>
+</nav>
